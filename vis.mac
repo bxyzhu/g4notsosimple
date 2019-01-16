@@ -1,0 +1,21 @@
+/run/initialize
+/vis/open VRML2FILE
+/vis/verbose 6 # See all messages from visualization
+/vis/drawVolume
+
+/vis/sceneHandler/attach
+/vis/viewer/flush
+
+########################
+# Uncomment for tracks
+/gps/particle gamma
+/gps/pos/type Point
+/gps/pos/centre 0 0 0 cm
+/gps/energy 2.6 MeV
+
+/vis/scene/add/trajectories
+/vis/scene/add/hits
+/vis/scene/endOfEventAction accumulate 10
+
+/run/beamOn 1
+########################
