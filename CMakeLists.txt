@@ -75,6 +75,8 @@ target_link_libraries(${myexe} ${Geant4_LIBRARIES})
 set(g4notsosimple_SCRIPTS
   vis.mac
   run.mac
+  geCounter.gdml
+  analysisHDF5.py
   )
 
 foreach(_script ${g4notsosimple_SCRIPTS})

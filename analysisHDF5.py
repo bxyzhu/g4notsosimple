@@ -5,14 +5,21 @@
 import h5py
 import numpy as np
 import pandas as pd
+
 def main():
-    data = HDFData()
-    with h5py.File('g4notsosimpleout.hdf5', 'r') as f:
-        f.visititems(data)
-    dataDict = data.sets
-    df = pd.DataFrame.from_dict(data.sets)
+    df = g4todf('g4notsosimpleout.hdf5')
     print(df.head(10))
     print(len(df))
+
+
+def g4todf(inFile):
+    g4data = HDFData()
+    with h5py.File(inFile, 'r') as f:
+        f.visititems(g4data)
+    dataDict = g4data.sets
+    df = pd.DataFrame.from_dict(g4data.sets)
+    return df
+
 
 class HDFData():
     def __init__(self):

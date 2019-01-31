@@ -72,5 +72,11 @@ int main(int argc, char** argv)
     ui->SessionStart();
   }
 
+  delete UImanager;
+  delete visManager;
+  delete stepping;
+  delete primary;
+  delete detector;
+
   return 0;
 }
